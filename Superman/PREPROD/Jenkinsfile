@@ -1,3 +1,6 @@
+def REPO_URL = 'https://github.com/kaveenabeywansa/ionic-templates.git';
+def REPO_BRANCH = 'master';
+
 pipeline {
     agent any
 
@@ -5,6 +8,24 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello Superman Preprod !'
+                sh "pwd"
+            }
+        }
+
+        stage('SCM') {
+            steps {
+                dir("${project}/PREPROD") {
+                    git(
+                        url: "${REPO_URL}",
+                        branch: "${REPO_BRANCH}"
+                    )
+                }
+            }
+        }
+
+        stage('End') {
+            steps {
+                echo 'End of Job !'
             }
         }
     }
