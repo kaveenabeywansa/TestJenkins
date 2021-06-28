@@ -14,7 +14,7 @@ pipeline {
 
         stage('SCM') {
             steps {
-                dir("Batman/PREPROD") {
+                dir($PWD) {
                     git(
                         url: "${REPO_URL}",
                         branch: "${REPO_BRANCH}"
