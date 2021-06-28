@@ -14,10 +14,12 @@ pipeline {
 
         stage('SCM') {
             steps {
-                git(
-                    url: "${REPO_URL}",
-                    branch: "${REPO_BRANCH}"
-                )
+                dir("Batman/PREPROD") {
+                    git(
+                        url: "${REPO_URL}",
+                        branch: "${REPO_BRANCH}"
+                    )
+                }
             }
         }
 
