@@ -14,7 +14,7 @@ pipeline {
 
         stage('SCM') {
             steps {
-                dir("${project}/PREPROD") {
+                dir("${project}/PREPROD/PROJECT_DIR") {
                     git(
                         url: "${REPO_URL}",
                         branch: "${REPO_BRANCH}"
