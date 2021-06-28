@@ -15,7 +15,7 @@ pipeline {
             steps {
                 git(
                     url: "${REPO_URL}",
-                    branch: "${params.branch}"
+                    branch: "${REPO_BRANCH}"
                 )
             }
         }
