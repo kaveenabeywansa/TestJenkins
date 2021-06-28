@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo 'Hello Batman Preprod !'
                 // sh "pwd"
-                dir=$(pwd)
+                dir=pwd()
                 echo dir
             }
         }
