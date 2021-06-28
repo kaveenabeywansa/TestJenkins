@@ -8,15 +8,13 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello Batman Preprod !'
-                // sh "pwd"
-                def dir=pwd()
-                echo dir
+                sh "pwd"
             }
         }
 
         stage('SCM') {
             steps {
-                dir("Batman/PREPROD") {
+                dir(pwd()) {
                     git(
                         url: "${REPO_URL}",
                         branch: "${REPO_BRANCH}"
