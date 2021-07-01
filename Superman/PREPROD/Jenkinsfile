@@ -23,6 +23,14 @@ pipeline {
             }
         }
 
+        stage('RunFastlane') {
+            steps {
+                dir("Buildtool") {
+                    sh "bundle exec fastlane build_test_lane"
+                }
+            }
+        }
+
         stage('End') {
             steps {
                 echo 'End of Job !'
